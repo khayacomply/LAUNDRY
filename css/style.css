@@ -1,0 +1,293 @@
+/* ===============================
+   ROOT VARIABLES
+   =============================== */
+:root {
+    --green: #25D366;
+    --green-soft: #3ddc97;
+    --green-dark: #128C7E;
+
+    --blue: #3b82f6;
+    --blue-dark: #1a3a5f;
+
+    --white: #ffffff;
+    --dark-overlay: rgba(0,0,0,0.68);
+
+    --glass: rgba(255,255,255,0.18);
+    --shadow: 0 12px 35px rgba(0,0,0,0.35);
+
+    --transition: all 0.35s ease;
+}
+
+/* ===============================
+   RESET
+   =============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #0e1a26;
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+/* ===============================
+   NAVBAR
+   =============================== */
+.glassy-navbar {
+    backdrop-filter: blur(14px);
+    background: rgba(10,20,30,0.75);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.navbar-logo {
+    height: 52px;
+}
+
+.nav-link {
+    font-weight: 600;
+    color: var(--white) !important;
+    transition: var(--transition);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--green) !important;
+}
+
+.btn-whatsapp-nav {
+    background: linear-gradient(135deg, var(--green), var(--green-dark));
+    padding: 8px 22px;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(37,211,102,0.45);
+}
+
+/* ===============================
+   HERO SECTION
+   =============================== */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Video */
+.hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Overlay */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(0,0,0,0.72),
+        rgba(0,0,0,0.62)
+    );
+    z-index: 2;
+}
+
+/* ===============================
+   FOAM BUBBLES
+   =============================== */
+.bubble-container {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.foam-bubble {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.85;
+    animation-timing-function: linear;
+}
+
+.foam-bubble.blue {
+    background: radial-gradient(circle, #ffffff, rgba(59,130,246,0.45));
+    box-shadow: 0 0 28px rgba(59,130,246,0.45);
+}
+
+.foam-bubble.green {
+    background: radial-gradient(circle, #ffffff, rgba(37,211,102,0.45));
+    box-shadow: 0 0 28px rgba(37,211,102,0.45);
+}
+
+.foam-bubble.up {
+    animation: bubbleUp 16s infinite;
+}
+
+.foam-bubble.down {
+    animation: bubbleDown 16s infinite;
+}
+
+@keyframes bubbleUp {
+    from { transform: translateY(110vh) scale(0.3); }
+    to   { transform: translateY(-140px) scale(1.15); }
+}
+
+@keyframes bubbleDown {
+    from { transform: translateY(-140px) scale(0.3); }
+    to   { transform: translateY(110vh) scale(1.15); }
+}
+
+/* ===============================
+   HERO CONTENT
+   =============================== */
+.hero-content {
+    position: relative;
+    z-index: 4;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 18px;
+}
+
+/* Animated Brand Text */
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.6rem, 8vw, 5.2rem);
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+}
+
+/* COLOR CYCLING */
+.hero-title span {
+    animation: colorCycle 6s infinite;
+}
+
+@keyframes colorCycle {
+    0%   { color: #ffffff; }
+    33%  { color: var(--green-soft); }
+    66%  { color: var(--blue); }
+    100% { color: #ffffff; }
+}
+
+/* Tagline */
+.hero-tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(0.95rem, 3.5vw, 1.3rem);
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-bottom: 28px;
+}
+
+/* CTA */
+.hero-cta {
+    padding: 14px 38px;
+    background: linear-gradient(135deg, var(--green), var(--green-dark));
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 16px 40px rgba(37,211,102,0.55);
+    transition: var(--transition);
+}
+
+.hero-cta:hover {
+    transform: translateY(-4px);
+}
+
+/* ===============================
+   FOOTER
+   =============================== */
+.footer {
+    background: linear-gradient(135deg, #0b1a2a, #10273f);
+    color: white;
+}
+
+.footer-logo-img {
+    max-width: 160px;
+}
+
+/* Social Icons */
+.social-icons-footer {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.social {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    background: var(--glass);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.social:hover {
+    transform: translateY(-6px) scale(1.15);
+}
+
+.social.facebook:hover  { background:#1877f2; }
+.social.instagram:hover { background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
+.social.tiktok:hover    { background:#000; }
+.social.youtube:hover   { background:#ff0000; }
+.social.whatsapp:hover  { background:var(--green); }
+
+/* ===============================
+   FLOATING WHATSAPP
+   =============================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    width: 64px;
+    height: 64px;
+    background: var(--green);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    box-shadow: var(--shadow);
+    z-index: 999;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ===============================
+   MOBILE POLISH
+   =============================== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 3.1rem;
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-cta {
+        padding: 13px 30px;
+        font-size: 0.95rem;
+    }
+}
