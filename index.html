@@ -2,191 +2,290 @@
 <html lang="en-ZA">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Hlekokuhle Laundry - Premium laundry services in Emalahleni (Witbank), Mpumalanga">
-   
-
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Hlekokuhe Laundry - Premium laundry services in Emalahleni (Witbank), Mpumalanga">
+    <title>Hlekokuhe Laundry | Fresh & Clean Every Time</title>
+    
     <!-- Favicon -->
     <link rel="icon" href="img/logo.png">
-
-    <!-- Google Fonts (Hero font style like image) -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Libraries CSS -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="lib/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link href="lib/lightbox2/css/lightbox.min.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-
-    <!-- Font Awesome CDN -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-
+    
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
 </head>
-
 <body>
-
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar navbar-expand-lg glassy-navbar fixed-top">
-    <div class="container">
-        <a class="navbar-brand" href="#home">
-            <img src="img/logo.png" alt="Hlekokuhle Laundry" class="navbar-logo">
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto align-items-lg-center">
-                <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
-                <li class="nav-item"><a class="nav-link" href="#why-us">Why Us</a></li>
-                <li class="nav-item">
-                    <a class="nav-link btn-whatsapp-nav" href="https://wa.me/27792409270" target="_blank">
-                        💬 WhatsApp Order
-                    </a>
-                </li>
-            </ul>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="img/logo.png" alt="Hlekokuhe Laundry" class="navbar-logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testimonials">Reviews</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#why-us">Why Us</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-whatsapp" href="https://wa.me/27792409270" target="_blank">
+                            💬 WhatsApp Order
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<!-- ================= HERO SECTION ================= -->
+   <!-- HERO SECTION -->
 <section id="home" class="hero-section">
-
-    <!-- Foam Bubble Layer -->
-    <div class="bubble-container" id="bubbleContainer"></div>
-
     <!-- Video Background -->
-    <video class="hero-video" autoplay muted loop playsinline poster="img/hero-fallback.jpg">
-        <source src="videos/laundry-clean.mp4" type="video/mp4">
-    </video>
-
+    <div class="video-container">
+        <video class="hero-video" autoplay muted loop playsinline poster="img/hero-fallback.jpg">
+            <source src="videos/laundry-clean.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    
     <!-- Dark Overlay -->
     <div class="hero-overlay"></div>
-
-    <!-- HERO TEXT ONLY (NO LOGO) -->
+    
+    <!-- Hero Content -->
     <div class="hero-content text-center">
-        <h1 class="hero-title gradient-text">
-    Hlekokuhle Laundry
-</h1>
-
+        <h1 class="hero-title">Hlekokuhe Laundry</h1>
         <p class="hero-tagline">Where Clean Meets Fresh</p>
-
-        <a href="https://wa.me/27792409270" target="_blank" class="hero-cta">
+        <a href="https://wa.me/27792409270" class="btn btn-primary btn-lg hero-cta" target="_blank">
             Order on WhatsApp
         </a>
     </div>
 </section>
-
-<!-- ================= SERVICES ================= -->
-<section id="services" class="services-section py-5">
-    <div class="container text-center">
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-subtitle">Professional laundry solutions tailored to your needs</p>
-    </div>
-</section>
-
-<!-- ================= TESTIMONIALS ================= -->
-<section id="testimonials" class="testimonials-section py-5">
-    <div class="container text-center">
-        <h2 class="section-title">Customer Reviews</h2>
-
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide testimonial-card">
-                    ★★★★★<br>Excellent quality and fast service.
+    <!-- SERVICES SECTION -->
+    <section id="services" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Professional laundry solutions tailored to your needs</p>
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="service-card p-4 rounded-4">
+                        <div class="service-icon mb-3">🧺</div>
+                        <h3>Wash & Fold</h3>
+                        <p>Professional washing, drying, and folding with premium detergents.</p>
+                    </div>
                 </div>
-                <div class="swiper-slide testimonial-card">
-                    ★★★★★<br>Best laundry service in Emalahleni.
+                <div class="col-md-4 mb-4">
+                    <div class="service-card p-4 rounded-4">
+                        <div class="service-icon mb-3">👔</div>
+                        <h3>Dry Cleaning</h3>
+                        <p>Specialized cleaning for delicate fabrics, suits, and formal wear.</p>
+                    </div>
                 </div>
-                <div class="swiper-slide testimonial-card">
-                    ★★★★★<br>WhatsApp ordering is so convenient.
+                <div class="col-md-4 mb-4">
+                    <div class="service-card p-4 rounded-4">
+                        <div class="service-icon mb-3">👕</div>
+                        <h3>Special Care</h3>
+                        <p>Hand washing for delicate items, baby clothes, and specialty fabrics.</p>
+                    </div>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ================= WHY US ================= -->
-<section id="why-us" class="why-section py-5">
-    <div class="container text-center">
-        <h2 class="section-title">Why Choose Us</h2>
-        <p class="section-subtitle">Fast • Fresh • Reliable</p>
-    </div>
-</section>
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials" class="py-5">
+        <div class="container text-center">
+            <h2 class="section-title">Customer Reviews</h2>
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card p-4 rounded-4">
+                        <div class="rating mb-2">★★★★★</div>
+                        <p>"Excellent quality and fast service. My clothes have never been cleaner!"</p>
+                        <div class="author mt-3">- Sarah M., Emalahleni</div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card p-4 rounded-4">
+                        <div class="rating mb-2">★★★★★</div>
+                        <p>"Best laundry service in Emalahleni. The WhatsApp ordering is so convenient."</p>
+                        <div class="author mt-3">- Thandi L., Witbank</div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card p-4 rounded-4">
+                        <div class="rating mb-2">★★★★★</div>
+                        <p>"WhatsApp ordering is a game-changer. No more waiting in line!"</p>
+                        <div class="author mt-3">- John P., Emalahleni</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- ================= FOOTER ================= -->
+    <!-- WHY US SECTION -->
+    <section id="why-us" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="section-title">Why Choose Us</h2>
+            <p class="section-subtitle">Fast • Fresh • Reliable</p>
+            <div class="row mt-5">
+                <div class="col-md-3 mb-4">
+                    <div class="feature-card p-4 rounded-4">
+                        <div class="feature-icon mb-3">⚡</div>
+                        <h4>Fast Service</h4>
+                        <p>Same-day service available for most orders.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="feature-card p-4 rounded-4">
+                        <div class="feature-icon mb-3">🌱</div>
+                        <h4>Eco-Friendly</h4>
+                        <p>Biodegradable detergents and energy-efficient machines.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="feature-card p-4 rounded-4">
+                        <div class="feature-icon mb-3">✅</div>
+                        <h4>Quality Guarantee</h4>
+                        <p>Not satisfied? We'll rewash at no cost.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="feature-card p-4 rounded-4">
+                        <div class="feature-icon mb-3">📱</div>
+                        <h4>Convenient Ordering</h4>
+                        <p>Order, track, and pay all through WhatsApp.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-5">
+        <div class="container text-center">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6">
+                    <div class="contact-card p-4 rounded-4">
+                        <p class="contact-info mb-3">
+                            📞 <a href="tel:+27792409270" class="contact-link">079 240 9270</a>
+                        </p>
+                        <p class="contact-info mb-3">
+                            📍 12 Mandela Street, Emalahleni (Witbank), 1035, Mpumalanga
+                        </p>
+                        <p class="contact-info mb-4">
+                            🧭 <a href="https://maps.google.com/?q=12+Mandela+Street,+Emalahleni,+Mpumalanga" target="_blank" class="contact-link">View on Google Maps</a>
+                        </p>
+                        <a href="https://wa.me/27792409270" class="btn btn-primary btn-lg w-100" target="_blank">
+                            💬 Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
 <footer class="footer py-5">
     <div class="container">
-        <div class="row align-items-center text-center text-md-start">
-
-            <div class="col-md-4 mb-3">
-                <img src="img/logo.png" alt="Hlekokuhle Laundry" class="footer-logo-img">
-            </div>
-
-            <div class="col-md-4 mb-3">
-    <p>
-        📞 <a href="tel:+27792409270" style="color:#fff; text-decoration:none;">
-            079 240 9270
-        </a>
-    </p>
-
-    <p>
-        📍 12 Mandela Street,<br>
-        Emalahleni (Witbank), 1035<br>
-        Mpumalanga
-    </p>
-
-    <p>
-        🧭 
-        <a href="https://maps.google.com/?q=12+Mandela+Street,+Emalahleni,+Mpumalanga"
-           target="_blank"
-           style="color:#25D366; font-weight:600; text-decoration:none;">
-            View on Google Maps
-        </a>
-    </p>
-</div>
-
-
-            <div class="col-md-4 text-md-end">
-                <div class="social-icons-footer">
-                    <a href="#" class="social glass facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="social glass instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="social glass tiktok"><i class="fab fa-tiktok"></i></a>
-                    <a href="#" class="social glass youtube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://wa.me/27792409270" class="social glass whatsapp"><i class="fab fa-whatsapp"></i></a>
+        <div class="row">
+            <!-- Logo Section (Left) -->
+            <div class="col-md-3 mb-4 mb-md-0">
+                <div class="footer-logo-wrapper">
+                    <img src="img/logo.png" alt="Hlekokuhe Laundry" class="footer-logo">
+                    <p class="footer-tagline">Fresh & Clean Every Time</p>
                 </div>
             </div>
-
+            
+            <!-- Navigation & Email (Center) -->
+            <div class="col-md-4 mb-4 mb-md-0">
+                <div class="footer-nav">
+                    <h5 class="footer-heading">Quick Links</h5>
+                    <ul class="footer-menu list-unstyled">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#testimonials">Reviews</a></li>
+                        <li><a href="#why-us">Why Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <div class="footer-email mt-3">
+                        <i class="bi bi-envelope-fill"></i>
+                        <a href="mailto:info@hlekokuhelaundry.co.za">info@hlekokuhelaundry.co.za</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Address & Social (Right) -->
+            <div class="col-md-5">
+                <div class="footer-contact">
+                    <h5 class="footer-heading">Find Us</h5>
+                    <div class="footer-address">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <p>12 Mandela Street, Emalahleni (Witbank)<br>Mpumalanga, 1035</p>
+                    </div>
+                    <a href="https://maps.google.com/?q=12+Mandela+Street,+Emalahleni,+Mpumalanga" target="_blank" class="btn btn-sm btn-outline-light mt-2">
+                        <i class="bi bi-geo-fill"></i> View on Google Maps
+                    </a>
+                </div>
+                
+                <div class="footer-social mt-4">
+                    <h5 class="footer-heading">Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/hlekokuhe.laundry" target="_blank" class="social-icon facebook" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/hlekokuhe.laundry" target="_blank" class="social-icon instagram" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                            </svg>
+                        </a>
+                        <a href="https://tiktok.com/@hlekokuhe.laundry" target="_blank" class="social-icon tiktok" aria-label="TikTok">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.98 0-3.504.638-4.586 1.624-1.082.986-1.758 2.207-1.919 3.441H8v-2.5c.001-.657.107-1.301.305-1.906.198-.606.491-1.166.868-1.652.377-.486.835-.91 1.352-1.248.517-.338 1.09-.581 1.701-.723v2.647c-.586.11-1.127.338-1.603.667-.476.329-.884.744-1.213 1.222-.329.478-.578 1.007-.741 1.565-.163.558-.242 1.134-.242 1.704H5.98c.002-.657.107-1.301.305-1.906.198-.606.491-1.166.868-1.652.377-.486.835-.91 1.352-1.248.517-.338 1.09-.581 1.701-.723V0Z"/>
+                            </svg>
+                        </a>
+                        <a href="https://g.page/hlekokuhe-laundry" target="_blank" class="social-icon google" aria-label="Google">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="row mt-4">
-            <div class="col text-center">
-                <p>© 2026 Hlekokuhle Laundry. All rights reserved.</p>
+        
+        <!-- Copyright Section (Full Width) -->
+        <div class="row mt-5 pt-4 border-top border-light">
+            <div class="col-12 text-center">
+                <p class="mb-0 copyright">
+                    &copy; <span id="current-year"></span> Hlekokuhe Laundry. All rights reserved.
+                </p>
             </div>
         </div>
     </div>
 </footer>
 
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/27792409270" class="whatsapp-float" target="_blank">💬</a>
+<!-- JavaScript to auto-update year -->
+<script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
 
-<!-- Libraries JS -->
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/swiper/swiper-bundle.min.js"></script>
-<script src="lib/lightbox2/js/lightbox.min.js"></script>
+    <!-- FLOATING WHATSAPP BUTTON -->
+    <a href="https://wa.me/27792409270" class="whatsapp-float" target="_blank">
+        💬
+    </a>
 
-<!-- Custom JS -->
-<script src="js/main.js"></script>
-
+    <!-- Libraries JS -->
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
 </body>
 </html>
-
