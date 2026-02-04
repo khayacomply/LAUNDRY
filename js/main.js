@@ -3,68 +3,106 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const navbar = document.querySelector('.glassy-navbar');
     const bubbleContainer = document.getElementById('bubbleContainer');
-
     let lastScrollY = window.scrollY;
     let bubbleCooldown = false;
+    let isProgrammaticScroll = false; // For anchor link scrolling
 
     /* =========================
-       SCROLL HANDLER
+       NAVBAR & BUBBLE SCROLL HANDLER
        ========================= */
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
-        const direction = currentScrollY > lastScrollY ? 'down' : 'up';
-
+        
+        // Navbar scroll effect
         if (navbar) {
             navbar.classList.toggle('scrolled', currentScrollY > 50);
         }
-
-        if (bubbleContainer && !bubbleCooldown) {
+        
+        // Create bubbles ONLY when scrolling DOWN past hero
+        if (bubbleContainer && currentScrollY > 600 && currentScrollY > lastScrollY && !bubbleCooldown) {
             bubbleCooldown = true;
-
+            
             if (Math.random() < 0.35) {
-                createFoamBubble(direction);
+                createFoamBubble();
             }
-
+            
             setTimeout(() => {
                 bubbleCooldown = false;
-            }, 120);
+            }, 300);
         }
-
+        
         lastScrollY = currentScrollY;
     }, { passive: true });
 
     /* =========================
-       BUBBLE CREATOR
+       BUBBLE CREATOR (SIMPLIFIED)
        ========================= */
-    function createFoamBubble(direction) {
+    function createFoamBubble() {
+        if (!bubbleContainer) return;
+        
         const bubble = document.createElement('div');
-
         const size = Math.random() * 42 + 18;
         const duration = Math.random() * 8 + 12;
         const left = Math.random() * 100;
-
-        const themeClass = direction === 'down' ? 'green' : 'blue';
-        const motionClass = direction === 'down' ? 'up' : 'down';
-
-        bubble.className = `foam-bubble ${themeClass} ${motionClass}`;
+        
+        bubble.className = 'foam-bubble';
         bubble.style.width = `${size}px`;
         bubble.style.height = `${size}px`;
         bubble.style.left = `${left}%`;
+        bubble.style.bottom = '0';
         bubble.style.animationDuration = `${duration}s`;
-
+        
         bubbleContainer.appendChild(bubble);
-
+        
+        // Fade in
         requestAnimationFrame(() => {
             bubble.style.opacity = '1';
         });
-
+        
+        // Auto-remove after animation
         setTimeout(() => {
-            bubble.remove();
+            if (bubble.parentNode) bubble.remove();
         }, duration * 1000);
     }
 
     /* =========================
-       SWIPER (SAFE INIT)
+       SMOOTH SCROLL FOR ANCHOR LINKS (MOBILE SAFE)
+       ========================= */
+    document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
+        anchor.addEventListener('click', e => {
+            const targetId = anchor.getAttribute('href');
+            const target = document.querySelector(targetId);
+            
+            if (!target) return;
+            
+            e.preventDefault();
+            isProgrammaticScroll = true;
+            
+            // Calculate position (account for fixed navbar)
+            const navbarHeight = navbar ? navbar.offsetHeight : 80;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            
+            // Smooth scroll
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+            
+            // Reset flag after scroll completes
+            setTimeout(() => {
+                isProgrammaticScroll = false;
+            }, 800);
+            
+            // Close mobile menu if open
+            const navbarCollapse = document.querySelector('.navbar-collapse.show');
+            if (navbarCollapse && window.bootstrap?.Collapse) {
+                bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
+            }
+        });
+    });
+
+    /* =========================
+       SWIPER INIT (SAFE)
        ========================= */
     if (window.Swiper && document.querySelector('.swiper-container')) {
         new Swiper('.swiper-container', {
@@ -83,61 +121,4 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         });
     }
-
-    /* =========================
-   SMOOTH SCROLL (MOBILE SAFE)
-   ========================= */
-let isProgrammaticScroll = false;
-
-document
-    .querySelectorAll('a[href^="#"]:not([href="#"])')
-    .forEach(anchor => {
-        anchor.addEventListener('click', e => {
-            const target = document.querySelector(anchor.getAttribute('href'));
-            if (!target) return;
-
-            e.preventDefault();
-            isProgrammaticScroll = true;
-
-            const y =
-                target.getBoundingClientRect().top +
-                window.pageYOffset -
-                80;
-
-            window.scrollTo({
-                top: y,
-                behavior: 'smooth',
-            });
-
-            // Release lock after scroll settles
-            setTimeout(() => {
-                isProgrammaticScroll = false;
-            }, 600);
-
-            const navbarCollapse = document.querySelector('.navbar-collapse.show');
-            if (navbarCollapse && window.bootstrap) {
-                bootstrap.Collapse.getInstance(navbarCollapse)?.hide();
-            }
-        });
-    });
-
-/* Prevent mobile scroll jump-back */
-let lastStableScroll = window.scrollY;
-
-window.addEventListener(
-    'scroll',
-    () => {
-        if (!isProgrammaticScroll) {
-            lastStableScroll = window.scrollY;
-        }
-    },
-    { passive: true }
-);
-
-window.addEventListener('resize', () => {
-    if (!isProgrammaticScroll) {
-        window.scrollTo(0, lastStableScroll);
-    }
-});
-     
 });
