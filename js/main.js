@@ -14,12 +14,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentScrollY = window.scrollY;
         const direction = currentScrollY > lastScrollY ? 'down' : 'up';
 
-        /* Navbar glass effect */
         if (navbar) {
             navbar.classList.toggle('scrolled', currentScrollY > 50);
         }
 
-        /* Bubble creation (throttled + scroll driven) */
         if (bubbleContainer && !bubbleCooldown) {
             bubbleCooldown = true;
 
@@ -56,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         bubbleContainer.appendChild(bubble);
 
-        /* Force paint before animation */
         requestAnimationFrame(() => {
             bubble.style.opacity = '1';
         });
@@ -88,19 +85,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* =========================
-       SMOOTH SCROLL
-       ========================= */
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+   SMOOTH SCROLL (MOBILE SAFE)
+   ========================= */
+let isProgrammaticScroll = false;
+
+document
+    .querySelectorAll('a[href^="#"]:not([href="#"])')
+    .forEach(anchor => {
         anchor.addEventListener('click', e => {
             const target = document.querySelector(anchor.getAttribute('href'));
             if (!target) return;
 
             e.preventDefault();
+            isProgrammaticScroll = true;
+
+            const y =
+                target.getBoundingClientRect().top +
+                window.pageYOffset -
+                80;
 
             window.scrollTo({
-                top: target.offsetTop - 80,
+                top: y,
                 behavior: 'smooth',
             });
+
+            // Release lock after scroll settles
+            setTimeout(() => {
+                isProgrammaticScroll = false;
+            }, 600);
 
             const navbarCollapse = document.querySelector('.navbar-collapse.show');
             if (navbarCollapse && window.bootstrap) {
@@ -108,4 +120,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+/* Prevent mobile scroll jump-back */
+let lastStableScroll = window.scrollY;
+
+window.addEventListener(
+    'scroll',
+    () => {
+        if (!isProgrammaticScroll) {
+            lastStableScroll = window.scrollY;
+        }
+    },
+    { passive: true }
+);
+
+window.addEventListener('resize', () => {
+    if (!isProgrammaticScroll) {
+        window.scrollTo(0, lastStableScroll);
+    }
+});
+     
 });
