@@ -156,36 +156,39 @@ body {
     padding: 0 18px;
 }
 
-/* Animated Brand Text */
-.hero-title {
+/* ===============================
+   HERO TEXT (ONLY FIXED PART)
+   =============================== */
+/* ===============================
+   HERO GRADIENT TEXT (CLEAN & WORKING)
+   =============================== */
+
+.hero-title.gradient-text {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(2.6rem, 8vw, 5.2rem);
+    font-size: clamp(2.8rem, 8vw, 5.2rem);
     font-weight: 800;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     line-height: 1.1;
-    margin-bottom: 14px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #25D366,
+        #3b82f6,
+        #ffffff
+    );
+    background-size: 300% 100%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    animation: heroGradientMove 6s linear infinite;
 }
 
-/* COLOR CYCLING */
-.hero-title span {
-    animation: colorCycle 6s infinite;
-}
-
-@keyframes colorCycle {
-    0%   { color: #ffffff; }
-    33%  { color: var(--green-soft); }
-    66%  { color: var(--blue); }
-    100% { color: #ffffff; }
-}
-
-/* Tagline */
-.hero-tagline {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(0.95rem, 3.5vw, 1.3rem);
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    opacity: 0.9;
-    margin-bottom: 28px;
+@keyframes heroGradientMove {
+    0%   { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
 }
 
 /* CTA */
@@ -215,37 +218,6 @@ body {
 .footer-logo-img {
     max-width: 160px;
 }
-
-/* Social Icons */
-.social-icons-footer {
-    display: flex;
-    gap: 16px;
-    justify-content: center;
-}
-
-.social {
-    width: 54px;
-    height: 54px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    background: var(--glass);
-    backdrop-filter: blur(12px);
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-.social:hover {
-    transform: translateY(-6px) scale(1.15);
-}
-
-.social.facebook:hover  { background:#1877f2; }
-.social.instagram:hover { background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af); }
-.social.tiktok:hover    { background:#000; }
-.social.youtube:hover   { background:#ff0000; }
-.social.whatsapp:hover  { background:var(--green); }
 
 /* ===============================
    FLOATING WHATSAPP
@@ -277,15 +249,11 @@ body {
    MOBILE POLISH
    =============================== */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 3.1rem;
-    }
-
+    .hero-title { font-size: 3.1rem; }
     .hero-tagline {
         font-size: 1rem;
         letter-spacing: 2px;
     }
-
     .hero-cta {
         padding: 13px 30px;
         font-size: 0.95rem;
